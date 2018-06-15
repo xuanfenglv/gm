@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-添加管理员</title>
+
+		<script src="/gm_client/js/user/add-admin.js"></script>
+	</head>
+
+	<body>
+		
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">添加管理员</h2>
+								<p class="title-description">
+									添加一个新的管理员
+								</p>
+							</header>
+							<hr>
+						</section>
+						<div class="form-group-col-2">
+							<div class="form-label">名称：</div>
+							<div class="form-cont">
+								<input id="adminName" placeholder="名称..." type="text" class="form-control form-boxed" style="width:300px;" maxlength="10">
+								<span id="exist" class="word-aux" style="display: none;"><i class="icon-warning-sign"></i>用户名已存在</span>
+							</div>
+							
+						</div>
+						<div class="form-group-col-2">
+							<div class="form-label">密码1：</div>
+							<div class="form-cont">
+								<input id="pwd1" placeholder="请输入密码..." type="password" class="form-control form-boxed" style="width:300px;" maxlength="15">
+							</div>
+						</div>
+						<div class="form-group-col-2">
+							<div class="form-label">密码2：</div>
+							<div class="form-cont">
+								<input id="pwd2" placeholder="请再次密码..." type="password" class="form-control form-boxed" style="width:300px;" maxlength="15">
+							</div>
+						</div>
+						<div class="form-group-col-2">
+							<div class="form-label">权限：</div>
+							<div class="form-cont">
+								<select id="power" style="width:300px;">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group-col-2">
+							<div class="form-label"></div>
+							<div class="form-cont">
+								<button id="createAdmin" class="btn btn-primary-outline radius size-xl" style="width: 300px;">创建管理员</button>
+							</div>
+						</div>
+						<!--开始::结束-->
+					</div>
+				
+	</body>
+
+</html>

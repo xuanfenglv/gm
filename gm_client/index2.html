@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link type="text/css" href="login.css" />
+		<style>
+			html {
+				/*background-color: yellow;*/
+			}
+			
+			.notice-wrapper {
+				margin: 0 auto;
+				width: 1000px;
+				height: 500px;
+				padding: 20px;
+				border: solid 10px gray;
+				border-radius: 40px;
+			}
+			
+			.inner-wrapper {
+				border: solid 1px gray;
+				border-radius: 20px;
+			}
+			
+			.inner-wrapper:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.notice-select {
+				width: 250px;
+				height: 500px;
+				/*padding-top: 15px;
+				padding-bottom: 15px;*/
+				float: left;
+				border-right: solid 1px gray;
+				/*border: solid 1px gray;*/
+				/*margin-right: 10px;*/
+				/*box-shadow: 8px 8px 4px gray;*/
+				overflow-y: auto;
+				overflow-x: hidden;
+				/*border-radius: 15px;*/
+			}
+			
+			.notice-main {
+				width: 716px;
+				height: 480px;
+				padding: 10px;
+				/*border: solid 1px gray;*/
+				display: inline-block;
+				overflow-y: scroll;
+				overflow-x: hidden;
+				float: left;
+				/*border-radius: 20px;*/
+				/*box-shadow: 8px 8px 4px gray;*/
+			}
+			
+			.title,
+			.imgs,
+			.content {
+				border-bottom: 1px dashed gray;
+				margin-bottom: 10px;
+				width: 100%;
+			}
+			
+			.title h1 {
+				text-align: center;
+				justify-content: center;
+				font-weight: 900;
+				font-family: "楷体";
+				font-size: 30px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.imgs {
+				display: flex;
+				justify-content: flex-start;
+				flex-wrap: wrap;
+			}
+			
+			.img-wrapper {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				width: 160px;
+				height: 240px;
+				margin-right: 10px;
+				margin-bottom: 10px;
+			}
+			
+			.img {
+				width: 100%;
+				height: 100%;
+				box-shadow: 8px 8px 4px gray;
+			}
+			
+			.notice-select ul {
+				list-style: none;
+				width: 100%;
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			.notice-select li {
+				box-sizing: border-box;
+				width: 100%;
+				padding-left: 30px;
+				padding-right: 15px;
+				text-align: left;
+				font: 20px/50px "微软雅黑";
+				height: 50px;
+				/*border-top: solid 1px gray;*/
+				border-bottom: solid 1px gray;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			
+			.notice-select li:hover {
+				background-color: yellow;
+			}
+		</style>
+		<script src="/gm_client/config/property.js"></script>
+		<script src="/gm_client/javascript/jquery.js"></script>
+		<script src="/gm_client/js/common/ajax.js"></script>
+		<script src="/gm_client/javascript/plug-ins/layerUi/layer.js"></script>
+		<script src="/gm_client/javascript/public.js"></script>
+		<!-- end 通用-->
+		<script src="js/common/url-params.js"></script>
+		<script>
+			var params = GetUrlParams();
+			var noticeMap = new Map();
+
+			$(() => {
+				let ul = $(".notice-select ul");
+				let h1 = $(".title h1");
+				let imgs = $(".imgs");
+				let content = $(".content");
+
+				get(server.loginNotice, {
+					ids: params.ids
+				}, (data) => {
+					success("加载完毕");
+					drawContent(data.recordList[0]);
+
+					$.each(data.recordList, function(id, notice) {
+						ul.append($("<li id=" + notice.id + " >"+notice.title+"</li>"))
+						noticeMap.set(notice.id, notice);
+					});
+				});
+
+				function drawContent(notice) {
+					h1.html('');
+					h1.html(notice.title);
+					imgs.html('');
+					$.each(JSON.parse(notice.imgs), function(id, img) {
+						var img = '<div class="img-wrapper"><img class="img" src="' + server.imgPkg + img + '"></div>';
+						imgs.append(img);
+					});
+					content.html('')
+					content.html(notice.content);
+				}
+				$(".notice-select").on("click","li",function(){
+					let notice = noticeMap.get($(this).attr("id"));
+					drawContent(notice);
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="notice-wrapper">
+			<div class="inner-wrapper">
+				<div class="notice-select">
+					<ul>
+						<!--<li>猫游记开服猫游记开服猫游记开服</li>-->
+
+					</ul>
+				</div>
+				<div class="notice-main">
+					<div class="title">
+						<h1>猫游记开服公告</h1>
+					</div>
+					<div class="imgs">
+						<!--<div class="img-wrapper"><img class="img" src="img/1.jpg" /></div>-->
+
+					</div>
+					<div class="content">
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

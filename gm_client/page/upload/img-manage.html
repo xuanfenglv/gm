@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-主页</title>
+		<!-- begin 通用-->
+		<link rel="icon" href="/gm_client/images/icon/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/style.css" />
+		<!-- end 通用-->
+
+		<!-- begin 通用-->
+		<script src="/gm_client/config/property.js"></script>
+		<script src="/gm_client/global/final.js"></script>
+		<script src="/gm_client/global/global.js"></script>
+		<script src="/gm_client/javascript/jquery.js"></script>
+		<script src="/gm_client/js/common/ajax.js"></script>
+		<script src="/gm_client/javascript/plug-ins/layerUi/layer.js"></script>
+		<script src="/gm_client/javascript/public.js"></script>
+		<script src="/gm_client/js/common/load-template.js"></script>
+		<!-- end 通用-->
+
+		<!-- begin 本页私有-->
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/img-manage.css" />
+		<script src="/gm_client/js/common/img-manage.js"></script>
+		<!-- end 本页私有-->
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="main-wrap">
+			<div class="side-nav">
+			</div>
+			<div class="content-wrap">
+				<header class="top-hd">
+				</header>
+				<main class="main-cont content mCustomScrollbar _mCS_2 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;">
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">图片管理</h2>
+								<p class="title-description">
+									查看删除图片
+								</p>
+							</header>
+							<hr>
+						</section>
+						<div class="form-cont">
+							<label class="check-box">
+								<input id="edit" type="checkbox">
+								<span>编辑</span>
+							</label>
+							<button id="delete" class="btn btn-danger radius" style="display: none;">删除</button>
+						</div>
+						<div id="imgs-container" class="form-group-col-2">
+							<!--<div class="img-container">
+								<div class="img-select">
+									<img class="img-body" src="http://127.0.0.1/img/cc5f5ead659f9d2da65cc0c204ae579d.jpg" />
+									<div class="select"></div>
+								</div>
+							</div>-->
+						</div>
+						<!--开始::结束-->
+					</div>
+				</main>
+				<footer class="btm-ft">
+				</footer>
+			</div>
+		</div>
+		</div>
+		<div class="mask" style="display: none;" display="block"></div>
+		<div class="dialog" style="display: none;">
+			<div class="dialog-hd">
+				<strong class="lt-title">大图</strong>
+				<a class="rt-operate icon-remove JclosePanel" title="关闭"></a>
+			</div>
+			<div class="dialog-bd">
+				<!--start::-->
+				<img id="bigImg" />
+				<!--end::-->
+			</div>
+			<div class="dialog-ft">
+				<button class="btn btn-info JyesBtn">确认</button>
+				<button class="btn btn-secondary JnoBtn">关闭</button>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,70 @@
+.resource-option,.resource-info {
+	margin-right: 20px;
+	border-radius: 8px;
+	width: 500px;
+	height: 260px;
+	border: solid 1px #ccc;
+	float: left;
+}
+.resource-menu li {
+	width:100%;
+	margin-top: 10px;
+	/*border-bottom: solid 1px gray;*/
+}
+.resource-info {
+	overflow:scroll;
+}
+.tag {
+	height: 30px;
+	margin-left: 10px;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 12px;
+	line-height: 30px;
+}
+.resource-menu .type {
+	display: inline-block;
+	border-radius: 4px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #e6e6e6;
+	width: 50px;
+}
+
+/*begin info*/
+
+.resource-info .name {
+	width: 220px;
+	background-color: #e6e6e6;
+	padding-left: 10px;
+	border-radius: 4px;
+}
+
+.resource-info .num {
+	width: 80px;
+	text-align: center;
+	background-color: #e6e6e6;
+	border-radius: 4px;
+}
+.resource-info .del {
+	width: 30px;
+	background-image:url(../images/icon/close-ico.png);
+}
+/*end info*/
+
+/*begin select*/
+
+.resource-option .resource {
+	width: 220px;
+}
+.resource-option .num {
+	width: 80px;
+}
+.resource-option .add {
+	width: 60px;
+	vertical-align: top;
+}
+.resource[disabled=disabled] {
+	background-color: #e6e6e6;
+}
+/*end select*/

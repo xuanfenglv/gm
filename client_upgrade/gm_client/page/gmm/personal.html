@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-个人管理</title>
+
+		<script src="/gm_client/js/user/personal.js"></script>
+	</head>
+
+	<body>
+		
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">个人管理</h2>
+								<p class="title-description">
+									修改登录密码
+								</p>
+							</header>
+							<hr>
+						</section>
+						<div class="page-wrap">
+							<div class="tab-cont" style="display: block;">
+								<div class="form-group-col-2">
+									<div class="form-label">旧密码：</div>
+									<div class="form-cont">
+										<input id="oldPwd" type="password" placeholder="请输入旧密码..." class="form-control form-boxed" style="width:300px;">
+										<span id="nameTip" class="word-aux" style="display: none;"><i class="icon-warning-sign"></i><span>管理员名已存在</span></span>
+									</div>
+								</div>
+								<div class="form-group-col-2">
+									<div class="form-label">新密码1：</div>
+									<div class="form-cont">
+										<input id="newPwd1" type="password" placeholder="请输入新密码..." class="form-control form-boxed" style="width:300px;">
+										<span id="new_pwd1Tip" class="word-aux" style="display: none;"><i class="icon-warning-sign"></i>xxxx</span>
+									</div>
+								</div>
+								<div id="pwd2Wrapper" class="form-group-col-2">
+									<div class="form-label">新密码2：</div>
+									<div class="form-cont">
+										<input id="newPwd2" type="password" placeholder="请再次输入新密码..." class="form-control form-boxed" style="width:300px;">
+										<span id="new_pwd2Tip" class="word-aux" style="display: none;"><i class="icon-warning-sign"></i>xxxx</span>
+									</div>
+
+								</div>
+								<button id="updatePwd" class="btn btn-primary-outline radius size-xl" style="margin-left: 120px;width: 300px;">修改密码</button>
+							</div>
+						</div>
+						<!--开始::结束-->
+					</div>
+				 
+	</body>
+
+</html>

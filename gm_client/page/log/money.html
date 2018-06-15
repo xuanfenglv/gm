@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-主页</title>
+
+		<link rel="icon" href="/gm_client/images/icon/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/switch.css" />
+
+		<!-- begin 通用-->
+		<script src="/gm_client/config/property.js"></script>
+		<script src="/gm_client/global/global.js"></script>
+		<script src="/gm_client/javascript/jquery.js"></script>
+		<script src="/gm_client/js/common/ajax.js"></script>
+		<script src="/gm_client/javascript/plug-ins/layerUi/layer.js"></script>
+		<script src="/gm_client/javascript/public.js"></script>
+		<script src="/gm_client/js/common/load-template.js"></script>
+		<!-- end 通用-->
+		
+		<!-- begin 记录查询相关-->
+		<script src="/gm_client/javascript/excel.js"></script>
+		<script src="/gm_client/javascript/laydate/laydate.dev.js"></script>
+		<script src="/gm_client/javascript/plug-ins/pagination.js"></script>
+		<script src="/gm_client/js/common/show-data.js"></script>
+		<!-- end 记录查询相关-->
+		
+		<script src="/gm_client/js/log/money.js"></script>
+
+	</head>
+
+	<body>
+		<div class="main-wrap">
+			<div class="side-nav">
+			</div>
+			<div class="content-wrap">
+				<header class="top-hd">
+				</header>
+				<main class="main-cont content mCustomScrollbar _mCS_2 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;">
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">金钱日志</h2>
+								<p class="title-description">
+									记录金钱变更的细节
+								</p>
+							</header>
+							<hr>
+						</section>
+						<table id="table1" class="table table-bordered  mb-15">
+							<tbody>
+								<tr class="cen">
+									<td>单页数量:</td>
+									<td>
+										<select id="pageSize" style="width:auto;">
+											<option value="10">10</option>
+											<option value="15">15</option>
+											<option value="20">20</option>
+											<option value="50">50</option>
+											<option value="100">100</option>
+										</select>
+									</td>
+									<td>角色ID:</td>
+									<td>
+										<input id="charId"  class="form-control form-boxed" style="width:120px;">
+									</td>
+									
+									<td>货币类型:</td>
+									<td>
+										<select id="coinType" style="width:auto;">
+											<option value="-1">全部</option>
+											<option value="1">钻石</option>
+											<option value="2">金币</option>
+											<option value="3">银币</option>
+										</select>
+									</td>
+									<td>原因:</td>
+									<td>
+										<select id="reason" style="width:auto;">
+											<option value="-1">全部</option>
+											<option value="1">reason1</option>
+											<option value="2">reason2</option>
+										</select>
+									</td>
+									<td>时间:</td>
+									<td>
+										<input id="beginTime" class="form-control form-boxed" style="width:120px;"> ~
+										<input id="endTime" class="form-control form-boxed" style="width:120px;">
+									</td>
+									<td><input id="search" type="button" class="btn btn-lg btn-block" value="查询"></td>
+									<td>
+										<button id="export" class="btn btn-secondary radius">全部导出</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<table id="show_data" class="table mb-15">
+							<thead>
+								<tr>
+									<th>日志ID</th>
+									<th>日志类型</th>
+									<th>日志时间</th>
+									<th>服务器区ID</th>
+									<th>服务器ID</th>
+									<th>客户端类型</th>
+									<th>APPID</th>
+									<th>客户端设备类型</th>
+									<th>账号ID</th>
+									<th>账号名</th>
+									<th>角色ID</th>
+									<th>角色名</th>
+									<th>等级</th>
+									<th>原因</th>
+									<th>附加参数</th>
+									<th>创建时间</th>
+									
+									<th>场景ID</th>
+									<th>房间ID</th>
+									<th>货币类型</th>
+									<th>货币数值变化</th>
+									<th>货币剩余值</th>
+									<th>操作</th>
+									<th>note</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="cen">
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+								</tr>
+							</tbody>
+						</table>
+						<table id="excel_data" class="table mb-15" style="display: none;">
+							<thead>
+								<tr>
+									<th>日志ID</th>
+									<th>日志类型</th>
+									<th>日志时间</th>
+									<th>服务器区ID</th>
+									<th>服务器ID</th>
+									<th>客户端类型</th>
+									<th>APPID</th>
+									<th>客户端设备类型</th>
+									<th>账号ID</th>
+									<th>账号名</th>
+									<th>角色ID</th>
+									<th>角色名</th>
+									<th>等级</th>
+									<th>原因</th>
+									<th>附加参数</th>
+									<th>创建时间</th>
+									
+									<th>场景ID</th>
+									<th>房间ID</th>
+									<th>货币类型</th>
+									<th>货币数值变化</th>
+									<th>货币剩余值</th>
+									<th>操作</th>
+									<th>note</th>
+
+								</tr>
+							</thead>
+						<div class="panel panel-default">
+							<div class="panel-bd">
+								<div class="pagination"><span class="disabled">上一页</span><span class="current">1</span>
+									<a href="javascript:;" class="tcdNumber">2</a>
+									<a href="javascript:;" class="tcdNumber">3</a>
+									<a href="javascript:;" class="tcdNumber">4</a>
+									<a href="javascript:;" class="tcdNumber">5</a>
+									<a href="javascript:;" class="nextPage">下一页</a>
+								</div>
+							</div>
+						</div>
+						<!--开始::结束-->
+					</div>
+				</main>
+				<footer class="btm-ft">
+				</footer>
+			</div>
+		</div>
+		</div>
+	</body>
+
+</html>

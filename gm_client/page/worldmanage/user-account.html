@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-角色管理</title>
+
+		<!-- begin 通用-->
+		<link rel="icon" href="/gm_client/images/icon/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/style.css" />
+		<!-- end 通用-->
+		
+		<!-- begin 通用-->
+		<script src="/gm_client/config/property.js"></script>
+		<script src="/gm_client/global/global.js"></script>
+		<script src="/gm_client/javascript/jquery.js"></script>
+		<script src="/gm_client/js/common/ajax.js"></script>
+		<script src="/gm_client/javascript/plug-ins/layerUi/layer.js"></script>
+		<script src="/gm_client/javascript/public.js"></script>
+		<script src="/gm_client/js/common/load-template.js"></script>
+		<!-- end 通用-->
+		
+		<!-- begin 记录查询相关-->
+		<script src="/gm_client/javascript/excel.js"></script>
+		<script src="/gm_client/javascript/laydate/laydate.dev.js"></script>
+		<script src="/gm_client/javascript/plug-ins/pagination.js"></script>
+		<script src="/gm_client/js/common/show-data.js"></script>
+		<!-- end 记录查询相关-->
+		
+		<!-- begin 本页私有-->
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/switch.css" />
+		<script src="/gm_client/js/worldmanage/user-account.js"></script>
+		<!-- end 本页私有-->
+	</head>
+
+	<body>
+		<div class="main-wrap">
+			<div class="side-nav">
+			</div>
+			<div class="content-wrap">
+				<header class="top-hd">
+				</header>
+				<main class="main-cont content mCustomScrollbar _mCS_2 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;">
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">用户账号</h2>
+								<p class="title-description">
+									<!--描述xxxxxxxxxxxxxxxxxx-->
+								</p>
+							</header>
+							<hr>
+						</section>
+						<table id="condition" class="table table-bordered  mb-15">
+							<tbody>
+								<tr class="cen">
+									<td>分页大小:</td>
+									<td>
+										<select id="pageSize">
+											<option value="5">5条</option>
+											<option value="10" selected="selected">10条</option>
+											<option value="15">15条</option>
+											<option value="20">20条</option>
+											<option value="50">50条</option>
+											<option value="100">100条</option>
+										</select>
+									</td>
+									<td>账号ID:</td>
+									<td>
+										<input id="accountId" class="form-control form-boxed" style="width:100px;">
+									</td>
+									
+									
+									
+									<td>状态:</td>
+									<td>
+										<select id="state">
+											<option value="-1">全部</option>
+											<option value="0">正常</option>
+											<option value="1">已锁定</option>
+										</select>
+										
+									</td>
+									<td>最近登陆时间:</td>
+									<td>
+										<input id="loginBeginTime" class="form-control form-boxed" style="width:100px;"> ~
+										<input id="loginEndTime" class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td>最近退出时间:</td>
+									<td>
+										<input id="logoutBeginTime" class="form-control form-boxed" style="width:100px;"> ~
+										<input id="logoutEndTime" class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td><input id="search" type="button" class="btn btn-lg btn-block" value="查询"></td>
+								</tr>
+								<tr class="cen">
+									<td>登录IP:</td>
+									<td>
+										<input id="loginIp" class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td>账号名:</td>
+									<td>
+										<input id="name" class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td>权限:</td>
+									<td>
+										<select id="role">
+											<option value="-1">全部</option>
+											<option value="0">普通</option>
+											<option value="1">开发者</option>
+											<option value="2">debug</option>
+										</select>
+										
+									</td>
+									
+									<td>今日在线时长范围:</td>
+									<td>
+										<input id="onlineTimeBeginTime" class="form-control form-boxed" style="width:100px;"> ~
+										<input id="onlineTimeEndTime" class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td>区ID：</td>
+									<td>
+										<input id="regionId" class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td>
+										<button id="export" class="btn btn-secondary radius">全部导出</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<table id="show_data" class="table mb-15">
+							<thead>
+								<tr>
+									<th name="id">账号ID</th>
+									<th name="regionId">区Id</th>
+									<th name="answer">安全问题答案</th>
+									<th name="lastLoginDate">最近登录时间</th>
+									<th name="lastLoginDate">最近登录IP</th>
+									<th name="lastLoginIp">最近退出时间</th>
+									<th name="name">名字</th>
+									<th name="props">props</th>
+									<th name="question">安全问题</th>
+									<th name="role">权限</th>
+									<th name="state">状态</th>
+									<th name="todayOnlineTime">今日在线时长</th>
+									<th name="userSrc">用户来源</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="cen">
+									<td>10001</td>
+									<td>23</td>
+									<td>2</td>
+									<td>2018-04-20 15:23:50</td>
+									<td>110.110.110.110</td>
+									<td>2018-04-20 15:23:50</td>
+									<td>王尼玛</td>
+									<td>xxxx</td>
+									<td>1+1=</td>
+									<td>3</td>
+									<td>
+										<div class="staus switch-outer ">
+											<div class="switch-inner " userid="000WkZsXnHL9"></div>
+										</div>
+									</td>
+									<td>
+										120
+									</td>
+									<td>
+										??
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table id="excel_data" class="table mb-15 " style="display: none;">
+							<thead>
+								<tr>
+									<th name="id">账号ID</th>
+									<th name="regionId">区Id</th>
+									<th name="answer">安全问题答案</th>
+									<th name="lastLoginDate">最近登录时间</th>
+									<th name="lastLoginDate">最近登录IP</th>
+									<th name="lastLoginIp">最近退出时间</th>
+									<th name="name">名字</th>
+									<th name="props">props</th>
+									<th name="question">安全问题</th>
+									<th name="role">权限</th>
+									<th name="state">状态</th>
+									<th name="todayOnlineTime">今日在线时长</th>
+									<th name="userSrc">用户来源</th>
+								</tr>
+							</thead>
+						</table>
+						<div class="panel panel-default ">
+							<div class="panel-bd ">
+								<div class="pagination">
+
+								</div>
+							</div>
+						</div>
+						<!--开始::结束-->
+					</div>
+				</main>
+				<footer class="btm-ft">
+				</footer>
+			</div>
+		</div>
+		</div>
+	</body>
+
+</html>

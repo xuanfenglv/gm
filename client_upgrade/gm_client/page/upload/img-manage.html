@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-主页</title>
+		
+		<!-- begin 本页私有-->
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/img-manage.css" />
+		<script src="/gm_client/js/common/img-manage.js"></script>
+		<!-- end 本页私有-->
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">图片管理</h2>
+								<p class="title-description">
+									查看删除图片
+								</p>
+							</header>
+							<hr>
+						</section>
+						<div class="form-cont">
+							<label class="check-box">
+								<input id="edit" type="checkbox">
+								<span>编辑</span>
+							</label>
+							<button id="delete" class="btn btn-danger radius" style="display: none;">删除</button>
+						</div>
+						<div id="imgs-container" class="form-group-col-2">
+							<!--<div class="img-container">
+								<div class="img-select">
+									<img class="img-body" src="http://127.0.0.1/img/cc5f5ead659f9d2da65cc0c204ae579d.jpg" />
+									<div class="select"></div>
+								</div>
+							</div>-->
+						</div>
+						<!--开始::结束-->
+					</div>
+				 
+		<div class="mask" style="display: none;" display="block"></div>
+		<div class="dialog" style="display: none;">
+			<div class="dialog-hd">
+				<strong class="lt-title">大图</strong>
+				<a class="rt-operate icon-remove JclosePanel" title="关闭"></a>
+			</div>
+			<div class="dialog-bd">
+				<!--start::-->
+				<img id="bigImg" />
+				<!--end::-->
+			</div>
+			<div class="dialog-ft">
+				<button class="btn btn-info JyesBtn">确认</button>
+				<button class="btn btn-secondary JnoBtn">关闭</button>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,39 @@
+.clock {
+	width: 100px;
+	height: 33px;
+	font-weight: bold;
+	text-align: center;
+	color: gray;
+	border: solid 1px #cccccc;
+	display: inline-block;
+	vertical-align: top;
+	background-color: white;
+}
+
+.hour,
+.min,
+.second {
+	text-align: center;
+	font-size: 18px;
+	width: 28px;
+	height: 31px;
+	padding: 0px;
+	border-width: 0px;
+	vertical-align: top;
+}
+
+.hour:hover,
+.min:hover,
+.second:hover {
+	color: red;
+	background-color: yellow;
+}
+
+.timeTag {
+	width: 6px;
+	height: 31px;
+	font-size: 22px;
+	line-height: 26px;
+	display: inline-block;
+	vertical-align: top;
+}

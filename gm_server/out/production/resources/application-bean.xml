@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+       default-lazy-init="true">
+ 	<!--管理各个游戏服务器数据库 -->
+
+    <bean id="templateService" class="com.longma.mopet.gm.template.TemplateService" lazy-init="false">
+        <constructor-arg type="boolean" value="true" />
+        <constructor-arg type="boolean" value="true" />
+    </bean>
+    <bean id="config" class="com.longma.mopet.gm.config.Config" lazy-init="false"/>
+
+    <!-- 处理器注册 -->
+    <bean id="handlerManager" class="com.longma.mopet.gm.manager.HandlerManager" lazy-init="false">
+        <property name="httpHandlerMapping">
+            <map key-type="java.lang.Integer">
+                <entry key="4" value-ref="deleteImgHandler" />
+
+                <entry key="101" value-ref="addAdminHandler" />
+                <entry key="102" value-ref="resetPwdHandler" />
+                <entry key="103" value-ref="updatePowerHandler" />
+                <entry key="104" value-ref="suspendHandler" />
+                <entry key="105" value-ref="updatePwdHandler" />
+                <entry key="106" value-ref="existAdminHandler" />
+                <entry key="107" value-ref="selectUserListHandler"/>
+                <entry key="108" value-ref="unblockHandler"/>
+                <entry key="109" value-ref="selectOperationListHandler"/>
+                <entry key="110" value-ref="selectLogHandler"/>
+
+                <entry key="301" value-ref="userInfoSearchHandler"/>
+                <entry key="302" value-ref="roleInfoSearchHandler"/>
+
+                <entry key="401" value-ref="createRedeemCodeHandler"/>
+                <entry key="402" value-ref="searchRedeemCodeRecordHandler"/>
+                <entry key="403" value-ref="operateRedeemHandler"/>
+                <entry key="404" value-ref="updateRedeemHandler"/>
+
+                <entry key="405" value-ref="lookRedeemCodeHandler"/>
+                <entry key="411" value-ref="sendRewardHandler"/>
+                <entry key="412" value-ref="searchGMRewardHandler"/>
+                <entry key="499" value-ref="searchResourceHandler"/>
+
+                <entry key="501" value-ref="addTimingNoticeHandler"/>
+                <entry key="502" value-ref="searchTimingNoticeHandler"/>
+                <entry key="503" value-ref="updateTimingNoticeHandler"/>
+
+                <entry key="504" value-ref="addLoginNoticeHandler"/>
+                <entry key="505" value-ref="searchLoginNoticeHandler"/>
+                <entry key="506" value-ref="updateLoginNoticeHandlerr"/>
+
+                <entry key="507" value-ref="addPushNoticeHandler"/>
+                <entry key="508" value-ref="searchPushNoticeHandler"/>
+                <entry key="509" value-ref="updatePushNoticeHandler"/>
+
+                <entry key="520" value-ref="operateNoticeHandler"/>
+
+                <entry key="603" value-ref="moneyLogSearchHandler"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 处理器类 -->
+    <bean id="deleteImgHandler" class="com.longma.mopet.gm.gateway.file.handler.DeleteImgHandler" />
+    <!-- 管理员相关 100-->
+    <bean id="addAdminHandler" class="com.longma.mopet.gm.gateway.user.process.AddAdminHandler" />
+    <bean id="resetPwdHandler" class="com.longma.mopet.gm.gateway.user.process.ResetPwdHandler" />
+    <bean id="updatePowerHandler" class="com.longma.mopet.gm.gateway.user.process.UpdatePowerHandler" />
+    <bean id="suspendHandler" class="com.longma.mopet.gm.gateway.user.process.SuspendHandler" />
+    <bean id="updatePwdHandler" class="com.longma.mopet.gm.gateway.user.process.UpdatePwdHandler" />
+    <bean id="existAdminHandler" class="com.longma.mopet.gm.gateway.user.process.ExistAdminHandler" />
+    <bean id="selectUserListHandler" class="com.longma.mopet.gm.gateway.user.process.SelectUserListHandler" />
+    <bean id="unblockHandler" class="com.longma.mopet.gm.gateway.user.process.UnblockHandler" />
+    <bean id="selectOperationListHandler" class="com.longma.mopet.gm.gateway.user.process.SelectOperationListHandler" />
+    <bean id="selectLogHandler" class="com.longma.mopet.gm.gateway.user.process.SelectLogHandler" />
+
+    <!-- 世界管理相关 300-->
+    <bean id="userInfoSearchHandler" class="com.longma.mopet.gm.gateway.worldmanage.handler.UserInfoSearchHandler" />
+    <bean id="roleInfoSearchHandler" class="com.longma.mopet.gm.gateway.worldmanage.handler.RoleInfoSearchHandler" />
+
+    <!-- 发奖管理相关 400-->
+    <bean id="createRedeemCodeHandler" class="com.longma.mopet.gm.gateway.reward.handler.CreateRedeemCodeHandler" />
+    <bean id="searchRedeemCodeRecordHandler" class="com.longma.mopet.gm.gateway.reward.handler.SearchRedeemCodeRecordHandler" />
+    <bean id="operateRedeemHandler" class="com.longma.mopet.gm.gateway.reward.handler.OperateRedeemHandler" />
+    <bean id="lookRedeemCodeHandler" class="com.longma.mopet.gm.gateway.reward.handler.LookRedeemCodeHandler" />
+    <bean id="sendRewardHandler" class="com.longma.mopet.gm.gateway.reward.handler.SendRewardHandler" />
+    <bean id="searchGMRewardHandler" class="com.longma.mopet.gm.gateway.reward.handler.SearchGMRewardHandler" />
+    <bean id="updateRedeemHandler" class="com.longma.mopet.gm.gateway.reward.handler.UpdateRedeemHandler" />
+    <bean id="searchResourceHandler" class="com.longma.mopet.gm.gateway.reward.handler.SearchResourceHandler" />
+
+    <!-- 公告管理相关 500-->
+    <bean id="addTimingNoticeHandler" class="com.longma.mopet.gm.gateway.notice.handler.AddTimingNoticeHandler" />
+    <bean id="searchTimingNoticeHandler" class="com.longma.mopet.gm.gateway.notice.handler.SearchTimingNoticeHandler" />
+    <bean id="updateTimingNoticeHandler" class="com.longma.mopet.gm.gateway.notice.handler.UpdateTimingNoticeHandler" />
+
+    <bean id="addLoginNoticeHandler" class="com.longma.mopet.gm.gateway.notice.handler.AddLoginNoticeHandler" />
+    <bean id="searchLoginNoticeHandler" class="com.longma.mopet.gm.gateway.notice.handler.SearchLoginNoticeHandler" />
+    <bean id="updateLoginNoticeHandlerr" class="com.longma.mopet.gm.gateway.notice.handler.UpdateLoginNoticeHandler" />
+
+    <bean id="addPushNoticeHandler" class="com.longma.mopet.gm.gateway.notice.handler.AddPushNoticeHandler" />
+    <bean id="searchPushNoticeHandler" class="com.longma.mopet.gm.gateway.notice.handler.SearchPushNoticeHandler" />
+    <bean id="updatePushNoticeHandler" class="com.longma.mopet.gm.gateway.notice.handler.UpdatePushNoticeHandler" />
+
+    <bean id="operateNoticeHandler" class="com.longma.mopet.gm.gateway.notice.handler.OperateNoticeHandler" />
+
+    <!-- 游戏日志相关 600-->
+    <bean id="moneyLogSearchHandler" class="com.longma.mopet.gm.gateway.log.handler.MoneyLogSearchHandler" />
+
+
+
+    <bean id="A5" class="com.longma.mopet.gm.gateway.reward.handler.SearchGMRewardHandler" />
+
+</beans>

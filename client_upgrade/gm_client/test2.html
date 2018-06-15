@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.clock {
+				width: 100px;
+				height: 20px;
+				font-weight: bold;
+				text-align: center;
+				color: gray;
+				border: solid 1px gray;
+				
+			}
+			.hour,
+			.min,
+			.second {
+				font-size: 15px;
+				width: 18px;
+				height: 20px;
+				padding: 0px;
+				border-width: 0px;
+				vertical-align: top;
+			}
+			.hour:hover,
+			.min:hover,
+			.second:hover {
+				color: red;
+				background-color: yellow;
+			}
+			.timeTag {
+				width:6px;
+				height: 20px;
+				font-size: 15px;
+				line-height: 18px;
+				display:inline-block;
+				vertical-align: top;
+			}
+		</style>
+		<script src="javascript/jquery.js"></script>
+	</head>
+
+	<body>
+		<div class="clock">
+			<input class="hour" value="00" readonly="readonly" /><div class="timeTag">:</div>
+			<input class="min" value="00" readonly="readonly" /><div class="timeTag">:</div>
+			<input class="second" value="00" readonly="readonly" />
+		</div>
+	</body>
+	<script>
+		$(function() {
+
+			$(".hour").on("mousewheel DOMMouseScroll", function(e) {
+				wheelScroll(e, 23, $(this));
+			});
+			$(".min").on("mousewheel DOMMouseScroll", function(e) {
+				wheelScroll(e, 59, $(this));
+			});
+			$(".second").on("mousewheel DOMMouseScroll", function(e) {
+				wheelScroll(e, 59, $(this));
+			});
+		});
+
+		function wheelScroll(e, max, source) {
+			var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) || // chrome & ie
+				(e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1)); // firefox
+
+			var val = parseInt(source.val());
+			if(delta > 0) {
+				source.val(scrollUp(max, val));
+			} else if(delta < 0) {
+				source.val(scrollDown(max, val));
+			}
+		}
+
+		function scrollUp(max, val) {
+			if(val >= max) {
+				val = 00;
+			} else {
+				val++;
+			}
+			if(val < 10) {
+				val = '0' + val;
+			}
+			return val;
+		}
+
+		function scrollDown(max, val) {
+			if(val <= 0) {
+				val = max;
+			} else {
+				val--;
+			}
+			if(val < 10) {
+				val = '0' + val;
+			}
+			return val;
+		}
+
+		function appendOpts(total, selector) {
+			let opts = '';
+			for(var i = 0; i < total; i++) {
+				opts += '<option value="' + i + '">' + i + '</option>'
+			}
+			$(selector).html(opts);
+		}
+	</script>
+
+</html>

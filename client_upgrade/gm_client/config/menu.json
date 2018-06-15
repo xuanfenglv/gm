@@ -1,0 +1,123 @@
+[
+	{
+		"name": "服务器",
+		"prefix":"server",
+		"functions": [
+			{
+				"name": "服务器状态",
+				"page": "status.html"
+			}, {
+				"name": "开关控制",
+				"page": "on-off.html"
+			}
+		]
+	}, {
+		"name": "游戏管理",
+		"prefix":"worldmanage",
+		"functions": [
+			{
+				"name": "用户账号",
+				"page": "user-account.html"
+			}, {
+				"name": "角色管理",
+				"page": "role-manage.html"
+			}
+		]
+	}, {
+		"name": "文件上传",
+		"prefix":"upload",
+		"functions": [
+			{
+				"name": "资源更新",
+				"page": "resource-update.html"
+			},{
+				"name": "图片上传",
+				"page": "img-update.html"
+			},{
+				"name": "图片管理",
+				"page": "img-manage.html"
+			}
+		]
+	}, {
+		"name": "公告管理",
+		"prefix":"notice",
+		"functions": [
+			{
+				"name": "定时公告",
+				"page": "timing.html"
+			}, {
+				"name": "登录公告",
+				"page": "login.html"
+			}, {
+				"name": "推送",
+				"page": "push.html"
+			}
+		]
+	}, {
+		"name": "发奖管理",
+		"prefix":"reward",
+		"functions": [
+			{
+				"name": "GM发奖",
+				"page": "gm.html"
+			}, {
+				"name": "礼品码",
+				"page": "cdkey.html"
+			}
+		]
+	}, {
+		"name": "游戏日志",
+		"prefix":"log",
+		"functions": [
+			{
+				"name": "物品生产日志",
+				"page": "item-product.html"
+			}, {
+				"name": "物品变更日志",
+				"page": "item-change.html"
+			}, {
+				"name": "金钱日志",
+				"page": "money.html"
+			}, {
+				"name": "属性变化日志",
+				"page": "property.html"
+			}, {
+				"name": "任务日志",
+				"page": "task.html"
+			}, {
+				"name": "副本日志",
+				"page": "copy.html"
+			}
+		]
+	}, {
+		"name": "后台管理",
+		"prefix":"gmm",
+		"functions": [
+			{
+				"name": "新建管理员",
+				"page": "new-admin.html"
+			}, {
+				"name": "管理员管理",
+				"page": "manage-admin.html"
+			}, {
+				"name": "GM操作记录",
+				"page": "log.html"
+			}, {
+				"name": "个人管理",
+				"page": "personal.html"
+			}
+		]
+	},{
+		"name": "预警系统",
+		"prefix":"warn",
+		"functions": [
+			{
+				"name": "添加警报邮箱",
+				"page": "add-mail.html"
+			}, {
+				"name": "警报邮箱管理",
+				"page": "manage-mail.html"
+			}
+		]
+	}
+]

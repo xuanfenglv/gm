@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gameservers>
+    <gameserver>
+        <id>1</id>
+        <serverName>本地测试服</serverName>
+        <telnetIp>10.71.56.112</telnetIp>
+        <telnetPort>5656</telnetPort>
+        <ip>10.71.56.112</ip>
+        <port>3306</port>
+        <username>root</username>
+        <password>xuanfeng</password>
+    </gameserver>
+</gameservers>

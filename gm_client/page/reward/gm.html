@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-GM发奖</title>
+		<!-- begin 通用-->
+		<link rel="icon" href="/gm_client/images/icon/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/style.css" />
+		<!-- end 通用-->
+		
+		<!-- begin 通用-->
+		<script src="/gm_client/config/property.js"></script>
+		<script src="/gm_client/global/final.js"></script>
+		<script src="/gm_client/global/global.js"></script>
+		<script src="/gm_client/javascript/jquery.js"></script>
+		<script src="/gm_client/js/common/ajax.js"></script>
+		<script src="/gm_client/javascript/plug-ins/layerUi/layer.js"></script>
+		<script src="/gm_client/javascript/public.js"></script>
+		<script src="/gm_client/js/common/load-template.js"></script>
+		<!-- end 通用-->
+		
+		<!-- begin 记录查询相关-->
+		<script src="/gm_client/javascript/excel.js"></script>
+		<script src="/gm_client/javascript/laydate/laydate.dev.js"></script>
+		<script src="/gm_client/javascript/plug-ins/pagination.js"></script>
+		<script src="/gm_client/js/common/show-data.js"></script>
+		<!-- end 记录查询相关-->
+		
+		<!-- begin 服务器渠道-->
+		<script src="/gm_client/js/common/server-channel.js"></script>
+		<!-- end 服务器渠道-->
+		
+		<!-- begin 资源配置-->
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/resource-config.css" />
+		<script src="/gm_client/js/common/resource-config.js"></script>
+		<!-- end 资源配置-->
+		
+		<!-- begin 时分秒控件-->
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/common/clock.css" />
+		<script src="/gm_client/js/common/clock.js"></script>
+		<!-- end 时分秒控件-->
+		
+		<!-- begin 本页私有-->
+		<script src="/gm_client/js/reward/gm.js"></script>
+		<!-- end 本页私有-->
+	</head>
+
+	<body>
+		<div class="main-wrap">
+			<div class="side-nav">
+			</div>
+			<div class="content-wrap">
+				<header class="top-hd">
+				</header>
+				<main class="main-cont content mCustomScrollbar _mCS_2 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;">
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">GM发奖</h2>
+								<p class="title-description">
+									用于bug补偿
+								</p>
+							</header>
+							<hr>
+						</section>
+						<div class="panel panel-default">
+							<div class="panel-bd">
+								<div class="panel panel-primary">
+									<div class="panel-hd drawer-handle">发送GM奖励 (点击展开)</div>
+									<div class="panel-bd drawer-box">
+										<div class="form-group-col-2">
+											<div class="form-label">奖励ID：</div>
+											<div class="form-cont">
+												<input name="rewardId" placeholder="奖励ID(20以内数字)" maxlength="20" class="form-control form-boxed" style="width:300px;" type="tel">
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">奖励名称：</div>
+											<div class="form-cont">
+												<input name="name"  placeholder="奖励名称(20字以内)" maxlength="20" class="form-control form-boxed" style="width:300px;">
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">账号ID：</div>
+											<div class="form-cont">
+												<input name="account" placeholder="账号ID" class="form-control form-boxed" style="width:300px;" type="tel">
+											</div>
+										</div>
+										
+										<div class="form-group-col-2">
+											<div class="form-label">奖励原因：</div>
+											<div class="form-cont">
+												<select name="reason" style="width:300px;">
+													<option value="1">[1]报告bug</option>
+													<option value="2">[2]内部测试</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">补偿描述：</div>
+											<div class="form-cont">
+												<textarea name="desc" maxlength="400" placeholder="400字以内" class="form-control form-boxed"></textarea>
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">过期时间：</div>
+											<div class="form-cont">
+												<input id="deadline" placeholder="过期时间" class="form-control form-boxed" style="width:300px;">
+												<div class="clock deadline"><input class="hour" value="00" readonly="readonly"><div class="timeTag">:</div><input class="min" value="00" readonly="readonly"><div class="timeTag">:</div><input class="second" value="00" readonly="readonly"></div>
+											</div>
+										</div>
+										
+										<div class="form-group-col-2">
+											<div class="form-label">奖励内容：</div>
+											<div class="form-cont resource-menu">
+												<ul class="resource-info">
+													<!--<li>
+														<div class="type tag ">道具</div>
+														<div class="name tag ">[120012]折颜助力礼包</div>
+														<div class="tip tag ">X</div>
+														<div class="num tag ">100000</div>
+														<div class="del tag " title="移除"></div>
+													</li>-->
+												</ul>
+												<ul class="resource-option ">
+													<li type="1">
+														<div class="type tag ">道具</div>
+														<select class="resource tag ">
+														</select>
+														<select class="num tag ">
+															<option value="1 ">1</option>
+															<option value="2 ">2</option>
+															<option value="3 ">3</option>
+															<option value="4 ">4</option>
+															<option value="5 ">5</option>
+															<option value="6 ">6</option>
+															<option value="7 ">7</option>
+															<option value="8 ">8</option>
+															<option value="9 ">9</option>
+															<option value="10 ">10</option>
+															<option value="20 ">20</option>
+															<option value="50 ">50</option>
+															<option value="100 ">100</option>
+															<option value="200 ">200</option>
+															<option value="500 ">500</option>
+															<option value="1000 ">1000</option>
+															<option value="2000 ">2000</option>
+															<option value="5000 ">5000</option>
+															<option value="10000 ">10000</option>
+														</select>
+														<button class="add tag ">添加</button>
+													</li>
+													<li type="2">
+														<div class="type tag ">装备</div>
+														<select class="resource tag ">
+														</select>
+														<select class="num tag ">
+															<option value="1 ">1</option>
+															<option value="2 ">2</option>
+															<option value="3 ">3</option>
+															<option value="4 ">4</option>
+															<option value="5 ">5</option>
+															<option value="6 ">6</option>
+															<option value="7 ">7</option>
+															<option value="8 ">8</option>
+															<option value="9 ">9</option>
+															<option value="10 ">10</option>
+															<option value="20 ">20</option>
+															<option value="50 ">50</option>
+															<option value="100 ">100</option>
+															<option value="200 ">200</option>
+															<option value="500 ">500</option>
+															<option value="1000 ">1000</option>
+															<option value="2000 ">2000</option>
+															<option value="5000 ">5000</option>
+															<option value="10000 ">10000</option>
+														</select>
+														<button class="add tag ">添加</button>
+													</li>
+													<li type="3">
+														<div class="type tag ">卡片</div>
+														<select class="resource tag ">
+														</select>
+														<select class="num tag ">
+															<option value="1 ">1</option>
+															<option value="2 ">2</option>
+															<option value="3 ">3</option>
+															<option value="4 ">4</option>
+															<option value="5 ">5</option>
+															<option value="6 ">6</option>
+															<option value="7 ">7</option>
+															<option value="8 ">8</option>
+															<option value="9 ">9</option>
+															<option value="10 ">10</option>
+															<option value="20 ">20</option>
+															<option value="50 ">50</option>
+															<option value="100 ">100</option>
+															<option value="200 ">200</option>
+															<option value="500 ">500</option>
+															<option value="1000 ">1000</option>
+															<option value="2000 ">2000</option>
+															<option value="5000 ">5000</option>
+															<option value="10000 ">10000</option>
+														</select>
+														<button class="add tag ">添加</button>
+													</li>
+													<li type="4">
+														<div class="type tag ">钻石</div>
+														<select disabled="disabled" class="resource tag ">
+															<option value="0">钻石</option>
+														</select>
+														<select class="num tag ">
+															<option value="1 ">1</option>
+															<option value="2 ">2</option>
+															<option value="3 ">3</option>
+															<option value="4 ">4</option>
+															<option value="5 ">5</option>
+															<option value="6 ">6</option>
+															<option value="7 ">7</option>
+															<option value="8 ">8</option>
+															<option value="9 ">9</option>
+															<option value="10 ">10</option>
+															<option value="20 ">20</option>
+															<option value="50 ">50</option>
+															<option value="100 ">100</option>
+															<option value="200 ">200</option>
+															<option value="500 ">500</option>
+															<option value="1000 ">1000</option>
+															<option value="2000 ">2000</option>
+															<option value="5000 ">5000</option>
+															<option value="10000 ">10000</option>
+														</select>
+														<button class="add tag ">添加</button>
+													</li>
+													<li type="5">
+														<div class="type tag ">金币</div>
+														<select disabled="disabled" class="resource tag ">
+															<option value="0">金币</option>
+														</select>
+														<select class="num tag ">
+															<option value="1 ">1</option>
+															<option value="2 ">2</option>
+															<option value="3 ">3</option>
+															<option value="4 ">4</option>
+															<option value="5 ">5</option>
+															<option value="6 ">6</option>
+															<option value="7 ">7</option>
+															<option value="8 ">8</option>
+															<option value="9 ">9</option>
+															<option value="10 ">10</option>
+															<option value="20 ">20</option>
+															<option value="50 ">50</option>
+															<option value="100 ">100</option>
+															<option value="200 ">200</option>
+															<option value="500 ">500</option>
+															<option value="1000 ">1000</option>
+															<option value="2000 ">2000</option>
+															<option value="5000 ">5000</option>
+															<option value="10000 ">10000</option>
+														</select>
+														<button class="add tag ">添加</button>
+													</li>
+													<li type="6">
+														<div class="type tag ">银币</div>
+														<select disabled="disabled" class="resource tag ">
+															<option value="0">银币</option>
+														</select>
+														<select class="num tag ">
+															<option value="1 ">1</option>
+															<option value="2 ">2</option>
+															<option value="3 ">3</option>
+															<option value="4 ">4</option>
+															<option value="5 ">5</option>
+															<option value="6 ">6</option>
+															<option value="7 ">7</option>
+															<option value="8 ">8</option>
+															<option value="9 ">9</option>
+															<option value="10 ">10</option>
+															<option value="20 ">20</option>
+															<option value="50 ">50</option>
+															<option value="100 ">100</option>
+															<option value="200 ">200</option>
+															<option value="500 ">500</option>
+															<option value="1000 ">1000</option>
+															<option value="2000 ">2000</option>
+															<option value="5000 ">5000</option>
+															<option value="10000 ">10000</option>
+														</select>
+														<button class="add tag ">添加</button>
+													</li>
+												</ul>
+											</div>
+
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label"></div>
+											<div class="form-cont">
+												<input id="submit" class="btn btn-primary" value="提交表单" type="submit">
+												<!--<input class="btn btn-disabled" value="禁止" type="reset">-->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-bd">
+							<fieldset class="field-title center">
+								<legend>历史GM奖励查询</legend>
+							</fieldset>
+						</div>
+						<table id="condition" class="table table-bordered mb-15">
+							<tbody>
+								<tr class="cen">
+									<td>分页大小:</td>
+									<td>
+										<select id="pageSize">
+											<option value="5">5条</option>
+											<option value="10" selected="selected">10条</option>
+											<option value="15">15条</option>
+											<option value="20">20条</option>
+											<option value="50">50条</option>
+											<option value="100">100条</option>
+										</select>
+									</td>
+									<td>奖励ID:</td>
+									<td>
+										<input id="rewardId" class="form-control form-boxed" style="width:120px;">
+									</td>
+									<td>原因:</td>
+									<td>
+										<select name="reason" style="width:120px;">
+											<option value="0">全部</option>
+											<option value="1">[1]报告bug</option>
+											<option value="2">[2]内部测试</option>
+										</select>
+									</td>
+									<td>礼包名:</td>
+									<td>
+										<input id="name" class="form-control form-boxed" style="width:120px;">
+									</td>
+
+									<td>有效时间:</td>
+									<td>
+										<input id="beginTime2" class="form-control form-boxed" style="width:120px;"> ~
+										<input id="endTime2" class="form-control form-boxed" style="width:120px;">
+									</td>
+
+									<td><input id="search" type="button" class="btn btn-lg btn-block" value="查询"></td>
+									<td>
+										<button id="export" class="btn btn-secondary radius">全部导出</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table id="show_data" class="table mb-15">
+							<thead>
+								<tr>
+									<th>编号</th>
+									<th>奖励ID</th>
+									<th>奖励名称</th>
+									<th>账号ID</th>
+									<th>奖励原因</th>
+									<th>奖励描述</th>
+									<th>过期时间</th>
+									<th>内容</th>
+									<th>状态</th>
+									<th>发奖人</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!--<tr class="cen">
+									<td>1</td>
+									<td>20180102</td>
+									<td>xxx</td>
+									<td>1001</td>
+									<td>1</td>
+									<td>xxxx</td>
+									<td>2018-11-11 12:12:12</td>
+									<td>xxx</td>
+									<td>1</td>
+									<td>super</td>
+								</tr>-->
+							</tbody>
+						</table>
+						
+						<table id="excel_data" class="table mb-15 " style="display: none;"> 
+								<tr>
+									<th>编号</th>
+									<th>奖励ID</th>
+									<th>奖励名称</th>
+									<th>账号ID</th>
+									<th>奖励原因</th>
+									<th>奖励描述</th>
+									<th>过期时间</th>
+									<th>内容</th>
+									<th>状态</th>
+									<th>发奖人</th>
+								</tr>
+						</table>
+						<div class="panel panel-default">
+							<div class="panel-bd">
+								<div class="pagination">
+									<!--<span class="disabled">上一页</span><span class="current">1</span>
+									<a href="javascript:;" class="tcdNumber">2</a>
+									<a href="javascript:;" class="tcdNumber">3</a>
+									<a href="javascript:;" class="tcdNumber">4</a>
+									<a href="javascript:;" class="tcdNumber">5</a>
+									<a href="javascript:;" class="nextPage">下一页</a>-->
+								</div>
+							</div>
+						</div>
+						<!--开始::结束-->
+					</div>
+				</main>
+				<footer class="btm-ft">
+				</footer>
+			</div>
+		</div>
+		</div>
+	</body>
+
+</html>

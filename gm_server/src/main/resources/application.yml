@@ -1,0 +1,35 @@
+# 数据库配置
+spring:
+    datasource:
+          type: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+          url : jdbc:mysql://10.71.56.112:3306/mopet?userUnicode=true&characterEncoding=utf-8
+          username : root
+          password : xuanfeng
+          cachePreStmts : true
+     # 使用druid数据源
+          driver-class-name : com.mysql.jdbc.Driver
+          filters : stat
+          maxActive : 20
+          initialSize : 1
+          maxWait : 60000
+          minIdle : 1
+          timeBetweenEvictionRunsMillis : 60000
+          minEvictableIdleTimeMillis : 300000
+          validationQuery : select 'x'
+          testWhileIdle : true
+          testOnBorrow : false
+          testOnReturn : false
+          poolPreparedStatements : true
+          maxOpenPreparedStatements : 20
+
+server:
+  port: 80
+  tomcat:
+    uri-encoding: UTF-8
+
+##Mybatis 配置
+#mybatis:
+#      mapperLocations: classspath:dao/*.xml
+#      typeAliasesPackage: com.longma.mopet.gm
+#      configuration:
+#              cache-enabled : false

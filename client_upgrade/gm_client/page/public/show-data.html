@@ -1,0 +1,104 @@
+<table id="condition" class="table table-bordered mb-15">
+	<tbody>
+		<tr class="cen">
+			<td>分页大小:</td>
+			<td>
+				<select id="pageSize">
+					<option value="5">5条</option>
+					<option value="10" selected="selected">10条</option>
+					<option value="15">15条</option>
+					<option value="20">20条</option>
+					<option value="50">50条</option>
+					<option value="100">100条</option>
+				</select>
+			</td>
+			<td>礼品码ID:</td>
+			<td>
+				<input id="codeId" class="form-control form-boxed" style="width:120px;">
+			</td>
+			<td>礼包名:</td>
+			<td>
+				<input id="name" class="form-control form-boxed" style="width:120px;">
+			</td>
+
+			<td>有效时间:</td>
+			<td>
+				<input id="beginTime2" class="form-control form-boxed" style="width:120px;"> ~
+				<input id="endTime2" class="form-control form-boxed" style="width:120px;">
+			</td>
+
+			<td><input id="search" type="button" class="btn btn-lg btn-block" value="查询"></td>
+			<td>
+				<button id="export" class="btn btn-secondary radius">全部导出</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<table id="show_data" class="table mb-15 ">
+	<thead>
+		<tr>
+			<th>编号</th>
+			<th>礼品码ID</th>
+			<th>数量</th>
+			<th>礼包名</th>
+			<th>礼包描述</th>
+			<th>开始时间</th>
+			<th>结束时间</th>
+			<th>服务器</th>
+			<th>渠道</th>
+			<th>可领次数</th>
+			<th>礼包内容</th>
+			<th>可用</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="cen ">
+			<td>1</td>
+			<td>1000001</td>
+			<td>5</td>
+			<td>猫游记开服大礼包</td>
+			<td>为庆祝xxxxxxxxxxxxxxxxxxx</td>
+			<td>2018-04-17 16:09</td>
+			<td>2018-04-17 16:09</td>
+			<td>server1</td>
+			<td>安智市场、应用宝</td>
+			<td>3</td>
+			<td>xxxxxxxxxx</td>
+			<td>1</td>
+			<td>
+				<a title="暂停 " class="mr-5 pause">暂停</a>
+				<a title="编辑 " class="mr-5 edit">编辑</a>
+				<a title="删除 " class="mr-5 del">删除</a>
+				<a title="查看兑换码 " class="mr-5 look">查看</a>
+			</td>
+
+		</tr>
+	</tbody>
+</table>
+<table id="excel_data" class="table mb-15 " style="display: none;">
+	<thead>
+		<tr>
+			<th>编号</th>
+			<th>礼品码ID</th>
+			<th>数量</th>
+			<th>礼包名</th>
+			<th>礼包描述</th>
+			<th>开始时间</th>
+			<th>结束时间</th>
+			<th>服务器</th>
+			<th>渠道</th>
+			<th>可领次数</th>
+			<th>礼包内容</th>
+			<th>可用</th>
+		</tr>
+	</thead>
+</table>
+<div class="panel panel-default ">
+	<div class="panel-bd ">
+		<div class="pagination">
+			
+		</div>
+	</div>
+</div>
+<!--开始::结束-->

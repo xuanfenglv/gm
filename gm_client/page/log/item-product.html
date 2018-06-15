@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-主页</title>
+
+		<link rel="icon" href="/gm_client/images/icon/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/switch.css" />
+
+		<script src="/gm_client/config/property.js"></script>
+		<script src="/gm_client/global/global.js"></script>
+		<script src="/gm_client/javascript/jquery.js"></script>
+		<!--<script src="/gm_client/javascript/plug-ins/customScrollbar.min.js"></script>-->
+		<script src="/gm_client/javascript/plug-ins/layerUi/layer.js"></script>
+		<!--<script src="/gm_client/editor/ueditor.config.js"></script>-->
+		<!--<script src="/gm_client/editor/ueditor.all.js"></script>-->
+		<script src="/gm_client/javascript/plug-ins/pagination.js"></script>
+		<script src="/gm_client/javascript/public.js"></script>
+		<script src="/gm_client/js/common/load-template.js"></script>
+		<script src="/gm_client/js/common/switch.js"></script>
+	</head>
+
+	<body>
+		<div class="main-wrap">
+			<div class="side-nav">
+			</div>
+			<div class="content-wrap">
+				<header class="top-hd">
+				</header>
+				<main class="main-cont content mCustomScrollbar _mCS_2 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;">
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">物品生产日志</h2>
+								<p class="title-description">
+									记录物品生成的细节
+								</p>
+							</header>
+							<hr>
+						</section>
+						<table id="table1" class="table table-bordered  mb-15">
+							<tbody>
+								<tr class="cen">
+									<td>角色ID:</td>
+									<td>
+										<input class="form-control form-boxed" style="width:120px;">
+									</td>
+									<td>物品ID:</td>
+									<td>
+										<input class="form-control form-boxed" style="width:120px;">
+									</td>
+									<td>物品产生ID:</td>
+									<td>
+										<input class="form-control form-boxed" style="width:120px;">
+									</td>
+									<td>原因:</td>
+									<td>
+										<select style="width:auto;">
+											<option>原因分类</option>
+											<option>reason1</option>
+											<option>reason2</option>
+										</select>
+									</td>
+									<td>时间:</td>
+									<td>
+										<input id="beginTime" class="form-control form-boxed" style="width:120px;"> ~
+										<input id="endTime" class="form-control form-boxed" style="width:120px;">
+									</td>
+									<td><input id="search" type="button" class="btn btn-lg btn-block" value="查询"></td>
+									<td>
+										<button id="export" class="btn btn-secondary radius">全部导出</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table mb-15">
+							<thead>
+								<tr>
+									<th>日志ID</th>
+									<th>日志类型</th>
+									<th>时间</th>
+									<th>大区ID</th>
+									<th>服务器ID</th>
+									<th>终端类型</th>
+									<th>APPID</th>
+									<th>账号ID</th>
+									<th>账号名</th>
+									<th>角色ID</th>
+									<th>角色名</th>
+									<th>等级</th>
+									<th>VIP级别</th>
+									<th>原因</th>
+									<th>场景</th>
+									<th>物品ID</th>
+									<th>物品名称</th>
+									<th>数量</th>
+									<th>属性</th>
+									<th>参数</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="cen">
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+
+								</tr>
+							</tbody>
+						</table>
+						<div class="panel panel-default">
+							<div class="panel-bd">
+								<div class="pagination"><span class="disabled">上一页</span><span class="current">1</span>
+									<a href="javascript:;" class="tcdNumber">2</a>
+									<a href="javascript:;" class="tcdNumber">3</a>
+									<a href="javascript:;" class="tcdNumber">4</a>
+									<a href="javascript:;" class="tcdNumber">5</a>
+									<a href="javascript:;" class="nextPage">下一页</a>
+								</div>
+							</div>
+						</div>
+						<!--开始::结束-->
+					</div>
+				</main>
+				<footer class="btm-ft">
+				</footer>
+			</div>
+		</div>
+		</div>
+	</body>
+
+</html>

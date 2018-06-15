@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-主页</title>
+
+		<!-- begin 记录查询相关-->
+		<script src="/gm_client/javascript/excel.js"></script>
+		<script src="/gm_client/javascript/plug-ins/pagination.js"></script>
+		<script src="/gm_client/js/common/show-data.js"></script>
+		<!-- end 记录查询相关-->
+
+		<!-- begin 本页私有-->
+		<script src="/gm_client/js/worldmanage/role-manage.js"></script>
+		<!-- end 本页私有-->
+	</head>
+
+	<body>
+		 
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">推广渠道查询</h2>
+								<p class="title-description">
+									
+								</p>
+							</header>
+							<hr>
+						</section>
+
+						<table id="condition" class="table table-bordered  mb-15">
+							<tbody>
+								
+								<tr class="cen">
+									<td>分页大小:</td>
+									<td>
+										<select id="pageSize">
+											<option value="5">5条</option>
+											<option value="10" selected="selected">10条</option>
+											<option value="15">15条</option>
+											<option value="20">20条</option>
+											<option value="50">50条</option>
+											<option value="100">100条</option>
+										</select>
+									</td>
+									<td>查询范围:</td>
+									<td>
+										<select id="type">
+											<option value="1">全部渠道</option>
+											<option value="2" selected="selected">全部推广渠道</option>
+											<option value="41744000">购通</option>
+											<option value="43267002">聚广安卓</option>
+											<option value="42783002">崐耀桌面</option>
+											<option value="43164003">天隽桌面</option>
+											<option value="42135000">云游十方</option>
+											<option value="43340000">视加天辰</option>
+											<option value="40731000">聚乐游戏HTC</option>
+											<option value="40734004">中投视讯</option>
+										</select>
+									</td>
+									<td>开始时间</td>
+									<td>
+										<input id="beginTime" class="form-control form-boxed" style="width:100px;">
+									</td>
+									
+									<td>结束时间:</td>
+									<td>
+										<input id="endTime" class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td><input id="search" type="button" class="btn btn-lg btn-block" value="查询"></td>
+									<td>
+										<button id="export" class="btn btn-secondary radius">全部导出</button>
+									</td>
+									
+								</tr>
+							</tbody>
+						</table>
+						<table id="show_data" class="table mb-15">
+							<thead>
+								
+								<tr>
+									<th>用户Id</th>
+									<th>发行渠道</th>
+									<th>充值渠道</th>
+									<th>渠道订单号</th>
+									<th>创建时间</th>
+									<th>CP订单号</th>
+									<th>充值金额</th>
+									<th>发货时间</th>
+									<th>渠道号</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								</tr>
+							</tbody>
+						</table>
+						<div class="panel panel-default ">
+							<div class="panel-bd ">
+								<div class="pagination">
+
+								</div>
+							</div>
+						</div>
+						<table id="excel_data" class="table mb-15 " style="display: none;">
+							<thead>
+								<tr>
+									<th>用户Id</th>
+								<th>发行渠道</th>
+								<th>充值渠道</th>
+								<th>渠道订单号</th>
+								<th>创建时间</th>
+								<th>CP订单号</th>
+								<th>充值金额</th>
+								<th>发货时间</th>
+								<th>渠道号</th>
+								</tr>
+							</thead>
+						</table>
+						<!--开始::结束-->
+					</div>
+				 
+	</body>
+
+</html>

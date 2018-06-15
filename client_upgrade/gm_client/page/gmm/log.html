@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-GM操作记录</title>
+
+		<!-- begin 记录查询相关-->
+		<script src="/gm_client/javascript/excel.js"></script>
+		<script src="/gm_client/javascript/plug-ins/pagination.js"></script>
+		<script src="/gm_client/js/common/show-data.js"></script>
+		<!-- end 记录查询相关-->
+		<script src="/gm_client/js/user/gm-log.js"></script>
+	</head>
+
+	<body>
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">GM操作记录</h2>
+								<p class="title-description">
+									你懂得
+								</p>
+							</header>
+							<hr>
+						</section>
+						<table id="condition" class="table table-bordered  mb-15">
+							<tbody>
+								<tr class="cen">
+									<td>分页大小:</td>
+									<td>
+										<select id="pageSize">
+											<option value="5">5条</option>
+											<option value="10" selected="selected">10条</option>
+											<option value="15">15条</option>
+											<option value="20">20条</option>
+											<option value="50">50条</option>
+											<option value="100">100条</option>
+										</select>
+									</td>
+									<td>操作名:</td>
+									<td>
+										<select id="operation" style="width:auto;">
+
+										</select>
+									</td>
+									<td>操作者:</td>
+									<td>
+										<input id="operator" class="form-control form-boxed" style="width:120px;">
+									</td>
+									<td>时间:</td>
+									<td>
+										<input id="beginTime" class="form-control form-boxed" style="width:120px;"> ~
+										<input id="endTime" class="form-control form-boxed" style="width:120px;">
+									</td>
+									<td><input id="search" type="button" class="btn btn-lg btn-block" value="查询"></td>
+									<td>
+										<button id="export" class="btn btn-secondary radius">全部导出</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table id="show_data" class="table mb-15">
+							<thead>
+								<tr>
+									<th>日志ID</th>
+									<th>消息号</th>
+									<th>操作名</th>
+									<th>操作者</th>
+									<th>时间</th>
+									<th>结果</th>
+									<th>请求</th>
+									<th>响应</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="cen">
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+									<td>xxx</td>
+
+								</tr>
+							</tbody>
+						</table>
+						<table id="excel_data" class="table mb-15 " style="display: none;">
+							<thead>
+								<tr>
+									<th>日志ID</th>
+									<th>消息号</th>
+									<th>操作名</th>
+									<th>操作者</th>
+									<th>时间</th>
+									<th>结果</th>
+									<th>请求</th>
+									<th>响应</th>
+								</tr>
+							</thead>
+						</table>
+						<div class="panel panel-default ">
+							<div class="panel-bd ">
+								<div class="pagination">
+									<!--<span class="disabled ">上一页</span><span class="current ">1</span>
+									<a href="javascript:; " class="tcdNumber ">2</a>
+									<a href="javascript:; " class="tcdNumber ">3</a>
+									<a href="javascript:; " class="tcdNumber ">4</a>
+									<a href="javascript:; " class="tcdNumber ">5</a>
+									<a href="javascript:; " class="nextPage ">下一页</a>-->
+								</div>
+							</div>
+						</div>
+						<!--开始::结束-->
+					</div>
+	</body>
+
+</html>

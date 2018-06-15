@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<request>
+	<userId>1127899793</userId>
+	<contentId>659916068696</contentId>
+	<consumeCode>006144338007</consumeCode>
+	<cpid>799087</cpid>
+	<orderId>0301527214097744y8isdb</orderId>
+	<chargePolicy>1</chargePolicy>
+	<payType>0</payType>
+	<thirdPayType/>
+	<hRet>0</hRet>
+	<status>1800</status>
+	<versionId>01</versionId>
+	<cpparam>1805251075862349</cpparam>
+	<packageID/>
+	<provinceId>851</provinceId>
+	<channelId>43164003</channelId>
+</request>

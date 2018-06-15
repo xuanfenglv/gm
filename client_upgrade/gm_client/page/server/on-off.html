@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-角色管理</title>
+
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/switch.css" />
+
+		<script src="/gm_client/js/common/switch.js"></script>
+	</head>
+
+	<body>
+		 
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">用户账号</h2>
+								<p class="title-description">
+									描述xxxxxxxxxxxxxxxxxx
+								</p>
+							</header>
+							<hr>
+						</section>
+						<table id="table1" class="table table-bordered  mb-15">
+							<tbody>
+								<tr class="cen">
+									<td>账号ID:</td>
+									<td>
+										<input class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td>账号名:</td>
+									<td>
+										<input class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td>登录IP:</td>
+									<td>
+										<input class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td>最后登陆时间:</td>
+									<td>
+										<input id="beginTime" class="form-control form-boxed" style="width:100px;"> ~
+										<input id="endTime" class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td>时长范围:</td>
+									<td>
+										<input id="beginTime" class="form-control form-boxed" style="width:100px;"> ~
+										<input id="endTime" class="form-control form-boxed" style="width:100px;">
+									</td>
+									<td>
+										<label class="check-box">
+											<input checked="checked" name="mmm" type="checkbox">
+											<span>封号</span>
+										</label>
+									</td>
+									<td>
+										<label class="check-box">
+											<input checked="checked" name="mmm" type="checkbox">
+											<span>开发者权限</span>
+										</label>
+									</td>
+									<td><input id="search" type="button" class="btn btn-lg btn-block" value="查询"></td>
+									<td>
+										<button id="export" class="btn btn-secondary radius">全部导出</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table mb-15">
+							<thead>
+								<tr>
+									<th>服务器ID</th>
+									<th>服务器名称</th>
+									<th>充值开关</th>
+									<th>登录开关</th>
+									<th>防沉迷开关</th>
+									<th>屏蔽字库开关</th>
+									<th>各终端登录开关</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="cen">
+									<td>10001</td>
+									<td>server1</td>
+									
+									<td>
+										<div class="staus switch-outer ">
+											<div class="switch-inner "></div>
+										</div>
+									</td>
+									<td>
+										<div class="staus switch-outer ">
+											<div class="switch-inner "></div>
+										</div>
+									</td>
+									<td>
+										<div class="staus switch-outer ">
+											<div class="switch-inner "></div>
+										</div>
+									</td>
+									<td>
+										<div class="staus switch-outer ">
+											<div class="switch-inner "></div>
+										</div>
+									</td>
+									<td>
+										<div class="staus switch-outer ">
+											<div class="switch-inner "></div>
+										</div>
+									</td>
+									
+								</tr>
+							</tbody>
+						</table>
+						<!--开始::结束-->
+					</div>
+				 
+	</body>
+
+</html>

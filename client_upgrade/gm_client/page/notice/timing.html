@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-主页</title>
+
+		<!-- begin 记录查询相关-->
+		<script src="/gm_client/javascript/excel.js"></script>
+		<script src="/gm_client/javascript/plug-ins/pagination.js"></script>
+		<script src="/gm_client/js/common/show-data.js"></script>
+		<!-- end 记录查询相关-->
+
+		<!-- begin 服务器渠道-->
+		<script src="/gm_client/js/common/server-channel.js"></script>
+		<!-- end 服务器渠道-->
+
+		<!-- begin 时分秒控件-->
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/common/clock.css" />
+		<script src="/gm_client/js/common/clock.js"></script>
+		<!-- end 时分秒控件-->
+
+		<!-- begin 本页私有-->
+		<script src="/gm_client/js/notice/timing.js"></script>
+		<!-- end 本页私有-->
+
+	</head>
+
+	<body>
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">定时公告</h2>
+								<p class="title-description">
+									ps:查询支持模糊查询、可以使用<b>编辑</b>功能后点击<b>返回添加模式</b>来复用之前的公告、建议及时清理过期的公告
+								</p>
+							</header>
+							<hr>
+						</section>
+						<div class="panel panel-default">
+							<div class="panel-bd">
+								<div class="panel panel-primary">
+									<div class="panel-hd drawer-handle">新增公告 (点击展开)</div>
+									<div class="panel-bd drawer-box">
+										<div class="form-group-col-2">
+											<div class="form-label">开始时间：</div>
+											<div class="form-cont">
+												<input id="beginTime1" placeholder="开始时间" class="form-control form-boxed" style="width:300px;" type="text">
+												<div class="clock begin"></div>
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">结束时间：</div>
+											<div class="form-cont">
+												<input id="endTime1" placeholder="结束时间" class="form-control form-boxed" style="width:300px;" type="text">
+												<div class="clock end"></div>
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">重复间隔：</div>
+											<div class="form-cont">
+												<input id="repeatInterval" placeholder="重复间隔(秒)" class="form-control form-boxed" style="width:300px;" type="text">
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">终端：</div>
+											<div class="form-cont">
+												<label class="check-box">
+													<input checked="checked" name="mmm" type="checkbox">
+													<span>安卓</span>
+												</label>
+												<label class="check-box">
+													<input name="mmm" type="checkbox">
+													<span>苹果</span>
+												</label>
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">服务器：</div>
+											<div class="form-cont">
+												<label class="check-box">
+													<input id="serverAll" type="checkbox">
+													<span>全选</span>
+												</label>
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label"></div>
+											<div id="serverContent" class="form-cont">
+												<!--<label class="check-box">
+													<input name="server" type="checkbox">
+													<span>server1</span>
+												</label>-->
+											</div>
+
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">安卓渠道：</div>
+											<div class="form-cont">
+												<label class="check-box">
+													<input id="androidAll" type="checkbox">
+													<span>全选</span>
+												</label>
+
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label"></div>
+											<div id="androidContent" class="form-cont">
+												<!--<label class="check-box">
+													<input name="android" type="checkbox">
+													<span>安智</span>
+												</label>-->
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">苹果渠道：</div>
+											<div class="form-cont">
+												<label class="check-box">
+													<input name="channel" type="checkbox" value="100">
+													<span>苹果商店</span>
+												</label>
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">公告内容：</div>
+											<div class="form-cont">
+												<textarea id="content" class="form-control form-boxed" placeholder="跑马灯内容（不超过100字）" maxlength="100"></textarea>
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label">状态：</div>
+											<div class="form-cont">
+												<label class="check-box"><input id="pause" type="checkbox"><span>暂停</span></label>
+											</div>
+										</div>
+										<div class="form-group-col-2">
+											<div class="form-label"></div>
+											<div class="form-cont">
+												<input id="submit" class="btn btn-primary" value="添加公告">
+												<input id="update" class="btn btn-primary" value="修改公告" style="display: none;">
+												<button id="cancel" class="btn btn-danger radius" style="display: none;">返回添加模式</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-bd">
+							<fieldset class="field-title center">
+								<legend>历史公告</legend>
+							</fieldset>
+						</div>
+						<table id="condition" class="table table-bordered mb-15">
+							<tbody>
+								<tr class="cen">
+									<td>分页大小:</td>
+									<td>
+										<select id="pageSize">
+											<option value="5">5条</option>
+											<option value="10" selected="selected">10条</option>
+											<option value="15">15条</option>
+											<option value="20">20条</option>
+											<option value="50">50条</option>
+											<option value="100">100条</option>
+										</select>
+									</td>
+
+									<td>内容：</td>
+									<td>
+										<input id="content2" class="form-control form-boxed" style="width:120px;">
+									</td>
+
+									<td>有效时间:</td>
+									<td>
+										<input id="beginTime2" class="form-control form-boxed" style="width:120px;"> ~
+										<input id="endTime2" class="form-control form-boxed" style="width:120px;">
+									</td>
+
+									<td><input id="search" type="button" class="btn btn-lg btn-block" value="查询"></td>
+									<td>
+										<button id="export" class="btn btn-secondary radius">全部导出</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table id="show_data" class="table mb-15">
+							<thead>
+								<tr>
+									<th>公告ID</th>
+									<th>服务器</th>
+									<th>开始时间</th>
+									<th>结束时间</th>
+									<th>间隔时间</th>
+									<th>渠道</th>
+									<th>内容</th>
+									<th>暂停</th>
+									<th>操作</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<!--<tr class="cen">
+									<td>1000001</td>
+									<td>server1</td>
+									<td>2018-04-17 16:09</td>
+									<td>2018-04-17 16:09</td>
+									<td>5</td>
+									<td>安卓</td>
+									<td>是兄弟就一起来玩猫游记</td>
+									<td>1</td>
+									<td>
+										<a title="暂停" class="pause mr-5">暂停</a>
+										<a title="编辑" class="edit mr-5">编辑</a>
+										<a title="删除" class="del">删除</a>
+									</td>
+
+								</tr>
+								<tr class="cen">
+									<td>1000001</td>
+									<td>server1</td>
+									<td>2018-04-17 16:09</td>
+									<td>2018-04-17 16:09</td>
+									<td>5</td>
+									<td>安卓</td>
+									<td>是兄弟就一起来玩猫游记</td>
+									<td>0</td>
+									<td>
+										<a title="暂停" class="mr-5">暂停</a>
+										<a title="编辑" class="mr-5">编辑</a>
+										<a title="删除">删除</a>
+									</td>
+
+								</tr>-->
+							</tbody>
+						</table>
+						<div class="panel panel-default">
+							<div class="panel-bd">
+								<div class="pagination"><span class="disabled">上一页</span><span class="current">1</span>
+									<a href="javascript:;" class="tcdNumber">2</a>
+									<a href="javascript:;" class="tcdNumber">3</a>
+									<a href="javascript:;" class="tcdNumber">4</a>
+									<a href="javascript:;" class="tcdNumber">5</a>
+									<a href="javascript:;" class="nextPage">下一页</a>
+								</div>
+							</div>
+						</div>
+						<table id="excel_data" class="table mb-15 " style="display: none;">
+							<thead>
+								<tr>
+									<th>公告ID</th>
+									<th>服务器</th>
+									<th>开始时间</th>
+									<th>结束时间</th>
+									<th>间隔时间</th>
+									<th>渠道</th>
+									<th>内容</th>
+									<th>暂停</th>
+								</tr>
+							</thead>
+						</table>
+						<!--开始::结束-->
+					</div>
+
+	</body>
+
+</html>

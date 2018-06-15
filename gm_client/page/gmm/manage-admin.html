@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>猫游记后台管理系统-管理员管理</title>
+
+		<link rel="icon" href="/gm_client/images/icon/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/switch.css" />
+		<link rel="stylesheet" type="text/css" href="/gm_client/css/common/clock.css" />
+		
+
+		<script src="/gm_client/config/property.js"></script>
+		<script src="/gm_client/global/global.js"></script>
+		<script src="/gm_client/javascript/jquery.js"></script>
+		<script src="/gm_client/js/common/ajax.js"></script>
+		<script src="/gm_client/javascript/plug-ins/layerUi/layer.js"></script>
+		<script src="/gm_client/javascript/plug-ins/pagination.js"></script>
+		<script src="/gm_client/javascript/public.js"></script>
+		<script src="/gm_client/js/common/load-template.js"></script>
+
+		<script src="/gm_client/javascript/laydate/laydate.dev.js"></script>
+		<script src="/gm_client/js/common/show-data.js"></script>
+		<script src="/gm_client/js/common/clock.js"></script>
+		<script src="/gm_client/js/user/manage-admin.js"></script>
+	</head>
+
+	<body>
+		<div class="main-wrap">
+			<div class="side-nav">
+			</div>
+			<div class="content-wrap">
+				<header class="top-hd">
+				</header>
+				<main class="main-cont content mCustomScrollbar _mCS_2 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;">
+					<div class="page-wrap">
+						<!--开始::内容-->
+						<section class="page-hd">
+							<header>
+								<h2 class="title">管理员管理</h2>
+								<p class="title-description">
+									修改管理员的权限、重置管理员的密码(重置为mopet)、封停管理员
+								</p>
+							</header>
+							<hr>
+						</section>
+						<table id="table1" class="table table-bordered  mb-15">
+							<tbody>
+								<tr class="cen">
+									<td>管理员名:</td>
+									<td>
+										<input id="searchName" type="text" class="form-control form-boxed" style="width:150px;">
+									</td>
+									<td>权限范围:</td>
+									<td>
+										<select id="minPower" style="width:100px;">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											
+										</select>
+										~
+										<select id="maxPower" style="width:100px;">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9" selected="selected">9</option>
+											
+										</select>
+									</td>
+									<td><input id="userSearch" type="button" class="btn btn-lg btn-block" value="查询"></td>
+									<!--<td><input id="userSearch" type="button" class="btn btn-lg btn-block" value="全部导出"></td>-->
+								</tr>
+							</tbody>
+						</table>
+						<table id="show_data" class="table table-bordered table-striped table-hover">
+							<thead>
+								<tr class="cen">
+									<th>名字</th>
+									<th>权限</th>
+									<th>重置密码</th>
+									<th>封号状态</th>
+									<th>解封时间</th>
+								</tr>
+								
+							</thead>
+							<!--<tr class="cen">
+											<td>admin</td>
+											<td>
+												<select style="width:auto;" username="admin">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+												</select>
+											</td>
+											<td>
+												<button class="btn btn-danger radius-rounded" username="admin">重置密码</button>
+											</td>
+											<td>
+												<div class="feng switch-outer">
+													<div feng="uuu" class="switch-inner"></div>
+												</div>
+											</td>
+											<td>
+												2017-11-11 12:12:30
+											</td>
+										</tr>-->
+						</table>
+						<!--开始::结束-->
+					</div>
+				</main>
+				<footer class="btm-ft">
+				</footer>
+			</div>
+		</div>
+		</div>
+		<div class="fenghao dialog" style="display: none;">
+			<div class="dialog-hd">
+				<strong class="lt-title">封号设置[<span id="fenghaoName">admin</span>]</strong>
+				<a class="rt-operate icon-remove JclosePanel " title="关闭 "></a>
+			</div>
+			<div class="dialog-bd">
+				<!--start::-->
+				年月日:<input id="fengDate" type="text" class="form-control form-boxed" style="width: 120px;">
+				时分秒:<div class="clock"></div>
+				<!--end::-->
+			</div>
+			<div class="dialog-ft ">
+				<button id="confirmFenghao" class="btn btn-danger radius">确认</button>
+				<button class="btn btn-secondary JnoBtn ">关闭</button>
+			</div>
+		</div>
+	</body>
+
+</html>

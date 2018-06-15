@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<scripts>
+	<field name="item.xlsx">
+		<sheet class="com.longma.mopet.gm.template.resource.ItemTemplate"></sheet>
+	</field>
+	<field name="equip.xlsx">
+		<sheet class="com.longma.mopet.gm.template.resource.EquipTemplate"></sheet>
+	</field>
+	<field name="card.xlsx">
+		<sheet class="com.longma.mopet.gm.template.resource.CardTemplate"></sheet>
+	</field>
+
+</scripts>
